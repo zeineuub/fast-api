@@ -1,0 +1,11 @@
+name: Build and Deploy code
+on: [push, pull_req]
+jobs:
+  job1:
+    runs-on: ubuntu-latest # os
+    steps:
+      - name: pulling git repo
+        uses: actions/checkout@v2
+      - name: say hu to ghada
+        run: echo "hello ghada"
+      

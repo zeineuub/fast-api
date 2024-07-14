@@ -1,11 +1,16 @@
 
 from fastapi import  FastAPI
 from . import models
+from dotenv import load_dotenv
+
 from .database import engine
 from .router import posts, users,auth,vote
 from fastapi.middleware.cors import CORSMiddleware
 #models.Base.metadata.create_all(bind=engine)
 app = FastAPI()
+import os
+
+load_dotenv()
 
 app.add_middleware(
     CORSMiddleware,
@@ -22,4 +27,4 @@ app.include_router(vote.router)
 
 @app.get("/")
 def root():
-    return {"message":"hello"}
+    return {"message":"Hello World"}
