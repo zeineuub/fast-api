@@ -1,5 +1,5 @@
 name: Build and Deploy code
-on: [push, pull_req]
+on: [push, pull_request]
 jobs:
   job1:
     runs-on: ubuntu-latest # os
